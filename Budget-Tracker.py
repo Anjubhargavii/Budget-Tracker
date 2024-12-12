@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+
+This is a git repository
 # coding: utf-8
 
 # In[ ]:
