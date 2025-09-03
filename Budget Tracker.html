@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Budget Tracker</h1>
+    </header>
+    <main>
+        <section id="add-income">
+            <h2>Add Income</h2>
+            <form id="income-form">
+                <label for="income-amount">Amount:</label>
+                <input type="number" id="income-amount" required>
+                <label for="income-description">Description:</label>
+                <input type="text" id="income-description" required>
+                <button id="add-income-btn">Add Income</button>
+            </form>
+        </section>
+        <section id="add-expense">
+            <h2>Add Expense</h2>
+            <form id="expense-form">
+                <label for="expense-amount">Amount:</label>
+                <input type="number" id="expense-amount" required>
+                <label for="expense-description">Description:</label>
+                <input type="text" id="expense-description" required>
+                <label for="expense-category">Category:</label>
+                <select id="expense-category">
+                    <option value="Food">Food</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button id="add-expense-btn">Add Expense</button>
+            </form>
+        </section>
+        <section id="view-budget">
+            <h2>View Budget</h2>
+            <button id="view-budget-btn">View Budget</button>
+            <div id="budget-report"></div>
+        </section>
+        <section id="view-expenses">
+            <h2>View Expenses</h2>
+            <button id="view-expenses-btn">View Expenses</button>
+            <div id="expenses-report"></div>
+        </section>
+        <section id="view-income">
+            <h2>View Income</h2>
+            <button id="view-income-btn">View Income</button>
+            <div id="income-report"></div>
+        </section>
+        <section id="view-balance">
+            <h2>View Balance</h2>
+            <button id="view-balance-btn">View Balance</button>
+            <div id="balance-report"></div>
+        </section>
+        <section id="view-totals">
+            <h2>View Totals</h2>
+            <button id="view-totals-btn">View Totals</button>
+            <div id="totals-report"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+styles.css
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+section {
+    background-color: #f7f7f7;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+input[type="number"], input[type="text"], select {
+    width: 100%;
+    height: 2em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+#budget-report, #expenses-report, #income-report, #balance-report, #totals-report {
+    padding: 1em;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+
+
+script.js
+
+let income = [];
+let expenses = [];
+
+document
